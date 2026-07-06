@@ -72,6 +72,7 @@
       "chatgpt"
       "dbeaver-community"
       "slack"
+      "intellij-idea"
     ];
   };
 }
