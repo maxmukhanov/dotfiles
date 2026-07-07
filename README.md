@@ -1,7 +1,5 @@
 # dotfiles
 
-Watch the walkthrough: https://youtu.be/5N-okeDdIuI
-
 My personal Mac setup, managed with nix-darwin and home-manager.
 One repo, one command, and a fresh Mac ends up configured the same way every time.
 
@@ -28,7 +26,7 @@ Running the switch builds:
 On a brand new Mac, from a bare clone of this repo:
 
 ```sh
-git clone https://github.com/kunchenguid/dotfiles.git
+git clone https://github.com/maxmukhanov/dotfiles.git
 cd dotfiles
 ```
 
