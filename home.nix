@@ -33,9 +33,10 @@ in
       ".." = "cd ..";
       add = "git add .";
       push = "git push";
-      pull = "git pull";
-      m = "git switch main";
-      cc = "claude --dangerously-skip-permissions";
+      gp = "git pull origin main";
+      gcm = "git checkout main";
+      cc = "claude";
+      ls = "eza --icons=always";
       ll = "ls -lah";
     };
   };
@@ -50,6 +51,8 @@ in
         error_symbol = "[❯](red)";
       };
       cmd_duration.format = "[$duration]($style) ";
+      directory.truncate_to_repo = false;
+      directory.truncation_length = 0;
     };
   };
 

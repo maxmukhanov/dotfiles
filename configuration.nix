@@ -53,6 +53,8 @@
     onActivation.cleanup = "zap";  # remove anything not listed here
     onActivation.autoUpdate = true;
     onActivation.extraFlags = [ "--force" ];
+    taps = [
+    ];
     brews = [
       "herdr"
       "kubectl"
@@ -61,6 +63,10 @@
       "awscli"
       "azure-cli"
       "gh"
+      "helm"
+      "kubelogin"
+      "eza"
+
     ];
     casks = [
       "wezterm"
@@ -73,6 +79,8 @@
       "dbeaver-community"
       "slack"
       "intellij-idea"
+      "font-meslo-lg-nerd-font"
+      "notion"
     ];
   };
 }
