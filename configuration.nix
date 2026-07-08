@@ -62,6 +62,8 @@ in
     onActivation.autoUpdate = true;
     onActivation.extraFlags = [ "--force" ];
     taps = [
+      "p6m-dev/tap"
+      "archetect/tap"
     ];
     brews = [
       "herdr"
@@ -78,6 +80,8 @@ in
       "uv"
       "node"
       "gnupg"
+      "p6m"
+      "archetect"
     ];
     casks = [
       "wezterm"

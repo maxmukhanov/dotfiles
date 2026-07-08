@@ -73,4 +73,10 @@ in
     config.lib.file.mkOutOfStoreSymlink "${dotfiles}/home/AGENTS.md";
   home.file.".config/opencode/AGENTS.md".source =
     config.lib.file.mkOutOfStoreSymlink "${dotfiles}/home/AGENTS.md";
+
+  # Trust the p6m-dev tap so nix-homebrew's activation (which sets
+  # HOMEBREW_REQUIRE_TAP_TRUST) can load its formulae without prompting.
+  home.file.".homebrew/trust.json".text = builtins.toJSON {
+    trustedtaps = [ "p6m-dev/tap" "archetect/tap" ];
+  };
 }
