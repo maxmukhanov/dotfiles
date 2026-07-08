@@ -74,7 +74,7 @@ in
       "azure-cli"
       "gh"
       "helm"
-      "kubelogin"
+      "Azure/kubelogin/kubelogin"
       "eza"
       "rust"
       "uv"

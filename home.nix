@@ -40,6 +40,8 @@ in
       cc = "claude";
       ls = "eza --icons=always";
       ll = "ls -lah";
+      k = "kubectl";
+      kx = "kubectx";
     };
     # Install the Powerlevel10k theme package
     plugins = [
