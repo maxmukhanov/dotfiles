@@ -29,6 +29,7 @@ in
       bindkey '^f' autosuggest-accept
       bindkey "^[[1;3C" forward-word
       bindkey "^[[1;3D" backward-word
+      bindkey "^[[3~" delete-char
     '';
     shellAliases = {
       ".." = "cd ..";
