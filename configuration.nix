@@ -45,6 +45,7 @@ in
         "/Applications/Google Chrome.app"
         "/Applications/ChatGPT.app"
         "/Applications/Wispr Flow.app"
+        "/Applications/Telegram.app"
         "/Applications/DBeaver.app"
         "/Applications/Postman.app"
       ];
@@ -82,6 +83,7 @@ in
       "gnupg"
       "p6m"
       "archetect"
+      "dotnet"
     ];
     casks = [
       "wezterm"
@@ -96,6 +98,7 @@ in
       "intellij-idea"
       "font-meslo-lg-nerd-font"
       "notion"
+      "telegram"
     ];
   };
 }
