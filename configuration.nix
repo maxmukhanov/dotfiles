@@ -78,6 +78,7 @@ in
       "rust"
       "uv"
       "node"
+      "gnupg"
     ];
     casks = [
       "wezterm"
