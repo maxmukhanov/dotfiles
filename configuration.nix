@@ -1,5 +1,13 @@
 { user, ... }:
 
+let
+  # macOS 26 (Tahoe) dropped Launchpad in favour of the "Apps" launcher;
+  # Sequoia and earlier still ship Launchpad.app. Pick whichever exists.
+  launcherApp =
+    if builtins.pathExists "/System/Applications/Launchpad.app"
+    then "/System/Applications/Launchpad.app"
+    else "/System/Applications/Apps.app";
+in
 {
   # Determinate already manages the Nix daemon, so nix-darwin shouldn't.
   nix.enable = false;
@@ -17,16 +25,17 @@
       AppleInterfaceStyle = "Dark";
       KeyRepeat = 2;          # fast key repeat
       InitialKeyRepeat = 15;  # short delay before repeat
-      _HIHideMenuBar = true;  # auto-hide the menu bar
+      _HIHideMenuBar = false;  # auto-hide the menu bar
       AppleShowAllExtensions = true;
+      "com.apple.swipescrolldirection" = false;
     };
     dock = {
       autohide = false;
       orientation = "bottom";
-      tilesize = 48;
+      tilesize = 72;
 
       persistent-apps = [
-        "/System/Applications/Launchpad.app"
+        launcherApp
         "/System/Applications/Calendar.app"
         "/System/Applications/Notes.app"
         "/System/Applications/System Settings.app"
@@ -66,7 +75,9 @@
       "helm"
       "kubelogin"
       "eza"
-
+      "rust"
+      "uv"
+      "node"
     ];
     casks = [
       "wezterm"
