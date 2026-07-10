@@ -58,6 +58,20 @@ in
     enable = true;
     inherit user;
   };
+
+  # Trust the p6m-dev + archetect taps BEFORE Homebrew activation runs.
+  # nix-darwin runs extraActivation ahead of the homebrew activation step, so
+  # writing ~/.homebrew/trust.json here means nix-homebrew's first-run tapping
+  # (which honours HOMEBREW_REQUIRE_TAP_TRUST) never prompts/fails on a fresh
+  # machine. Doing this via home-manager's home.file loses the race - that
+  # activation runs after Homebrew has already tried, and failed, to tap.
+  system.activationScripts.extraActivation.text = ''
+    mkdir -p /Users/${user}/.homebrew
+    cat > /Users/${user}/.homebrew/trust.json <<'EOF'
+    {"trustedtaps":["p6m-dev/tap","archetect/tap"]}
+    EOF
+    chown ${user}:staff /Users/${user}/.homebrew/trust.json
+  '';
   homebrew = {
     enable = true;
     onActivation.autoUpdate = true;
