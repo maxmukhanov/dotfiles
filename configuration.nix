@@ -84,6 +84,9 @@ in
       "p6m"
       "archetect"
       "dotnet"
+      "mvn"
+      "java"
+      "pnpm"
     ];
     casks = [
       "wezterm"
@@ -99,6 +102,7 @@ in
       "font-meslo-lg-nerd-font"
       "notion"
       "telegram"
+      "rectangle"
     ];
   };
 }
