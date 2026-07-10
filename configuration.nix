@@ -85,7 +85,7 @@ in
       "archetect"
       "dotnet"
       "mvn"
-      "java"
+      "openjdk"
       "pnpm"
     ];
     casks = [
