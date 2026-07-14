@@ -31,5 +31,14 @@ config.keys = {
     },
 }
 
+-- Disable copy-on-select: releasing the left button just finalizes the
+-- selection without copying it to the clipboard.
+config.mouse_bindings = {
+  {
+    event = { Up = { streak = 1, button = 'Left' } },
+    mods = 'NONE',
+    action = act.ExtendSelectionToMouseCursor 'Cell',
+  },
+}
 
 return config
